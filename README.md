@@ -1,3 +1,3 @@
 ## Manga Reader
 
-A minimalistic manga reader.
+A beautiful and free manga reader.
