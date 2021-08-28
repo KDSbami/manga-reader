@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors:{
+      colors: {
         dark: {
           background: '#111110',
           foreground: '#FCFCFC',
@@ -11,17 +11,24 @@ module.exports = {
           accent2: '#7326BF',
           accentForeground:'#0D0D0D'
         },
-        light:{
+        light: {
           background: '#FCFCFC',
           foreground: '#111110',
           accent1: '#3E01FF',
           accent2: '#1B0273',
           accentForeground:'#0D0D0D'
         },
-        common:{
+        common: {
           background:'#1C1C1C',
           foreground:'#E0E0E0'
         }
+      },
+      fontFamily: {
+        'opensans': ['"Open Sans"', 'sans-serif']
+      },
+      spacing: {
+        '20px': '20px',
+        '65px': '65px',
       }
     },
   },
