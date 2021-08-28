@@ -1,12 +1,48 @@
 import { React, useContext } from 'react';
 import { ThemeContext } from '../Theme';
 
-export default function Button({ onClick, children, title }) {
+export default function Button({ onClick, children, title, type, animate }) {
     const { theme } = useContext(ThemeContext);
+    let sizing;
+    let fontSpacing;
+    let animation;
+    switch (type){
+        case "small":
+            sizing = "py-5px px-20px";
+            break;
+        case "big":
+            sizing = "py-20px px-65px"
+            break;
+        default:
+            sizing = "py-20px px-65px";
+            break;
+    }
+    switch (type){
+      case "small":
+          fontSpacing = "tracking-tight";
+          break;
+      case "big":
+          fontSpacing = ""
+          break;
+      default:
+          fontSpacing = "";
+          break;
+  }
+    switch (animate){
+      case true:
+          animation = `transition duration-500 ease-in-out bg-${theme}-foreground hover:bg-${theme}-background transition duration-500 ease-in-out text-${theme}-background hover:text-${theme}-foreground`;
+          break;
+      case false:
+          animation = `bg-${theme}-foreground text-${theme}-background`;
+          break;
+      default:
+          animation = `transition duration-500 ease-in-out bg-${theme}-foreground hover:bg-${theme}-background transition duration-500 ease-in-out text-${theme}-background hover:text-${theme}-foreground`;;
+          break;
+  }
     return(
-        <button className={`bg-${theme}-200 py-20px px-65px border-0 rounded-full`} onClick={onClick}>
+        <button className={`flex flex-row justify-center align-center border border-${theme}-foreground ${sizing} rounded-full ${animation}`} onClick={onClick}>
           {children ? children : 
-          <span className={`${theme}-textColor bg-${theme}-button font-opensans font-extrabold`}>
+          <span className={`font-mulish font-extrabold ${fontSpacing} text-xl`}>
               {title}
           </span>}
         </button>

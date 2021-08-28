@@ -6,7 +6,6 @@ export default function Theme({ children }) {
 
   const [theme, setTheme] = useState("");
   useEffect(() =>{
-    debugger;
     let storedColour = (localStorage.getItem('theme')) ? (localStorage.getItem('theme')) : 'theme-dark';
     switch(storedColour){
       case 'theme-dark':
