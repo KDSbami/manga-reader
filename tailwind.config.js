@@ -9,7 +9,7 @@ module.exports = {
           foreground: '#FCFCFC',
           accent1: '#F20587',
           accent2: '#7326BF',
-          accentForeground:'#0D0D0D'
+          accentForeground:'#FCFCFC'
         },
         light: {
           background: '#FCFCFC',
@@ -24,12 +24,22 @@ module.exports = {
         }
       },
       fontFamily: {
-        'opensans': ['"Open Sans"', 'sans-serif']
+        'mulish': ['Mulish', 'sans-serif']
       },
       spacing: {
         '20px': '20px',
         '65px': '65px',
-      }
+        '10px': '10px',
+        '5px': '5px',
+        '30px': '30px',
+        '1440px':'1440px'
+      },
+      screens: {
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
+      'max':'1440px'
+    },
     },
   },
   variants: {
