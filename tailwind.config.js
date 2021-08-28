@@ -5,16 +5,22 @@ module.exports = {
     extend: {
       colors:{
         dark: {
-          textColor: '#E8E8E8',
-          200: '#969696',
-          300: '#585757',
-          primaryShade: '#1C1C1C',
+          background: '#111110',
+          foreground: '#FCFCFC',
+          accent1: '#F20587',
+          accent2: '#7326BF',
+          accentForeground:'#0D0D0D'
         },
         light:{
-          primaryShade: '#E8E8E8',
-          300: '#969696',
-          200: '#585757',
-          textColor: '#1C1C1C',
+          background: '#FCFCFC',
+          foreground: '#111110',
+          accent1: '#3E01FF',
+          accent2: '#1B0273',
+          accentForeground:'#0D0D0D'
+        },
+        common:{
+          background:'#1C1C1C',
+          foreground:'#E0E0E0'
         }
       }
     },
