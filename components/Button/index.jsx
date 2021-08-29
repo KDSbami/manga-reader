@@ -30,17 +30,17 @@ export default function Button({ onClick, children, title, type, animate }) {
   }
     switch (animate){
       case true:
-          animation = `transition duration-500 ease-in-out bg-${theme}-foreground hover:bg-${theme}-background transition duration-500 ease-in-out text-${theme}-background hover:text-${theme}-foreground`;
+          animation = `transition duration-500 ease-in-out bg-foreground hover:bg-background transition duration-500 ease-in-out text-background hover:text-foreground`;
           break;
       case false:
-          animation = `bg-${theme}-foreground text-${theme}-background`;
+          animation = `bg-foreground text-background`;
           break;
       default:
-          animation = `transition duration-500 ease-in-out bg-${theme}-foreground hover:bg-${theme}-background transition duration-500 ease-in-out text-${theme}-background hover:text-${theme}-foreground`;;
+          animation = `transition duration-500 ease-in-out bg-foreground hover:bg-background transition duration-500 ease-in-out text-background hover:text-foreground`;;
           break;
   }
     return(
-        <button className={`flex flex-row justify-center align-center border border-${theme}-foreground ${sizing} rounded-full ${animation}`} onClick={onClick}>
+        <button className={`flex flex-row justify-center align-center border border-foreground ${sizing} rounded-full ${animation}`} onClick={onClick}>
           {children ? children : 
           <span className={`font-mulish font-extrabold ${fontSpacing} text-xl`}>
               {title}
