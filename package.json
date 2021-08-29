@@ -10,6 +10,8 @@
     "fmt": "prettier -w \"**/*.{js,jsx,json}\""
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "mini-css-extract-plugin": "^2.2.0",
     "next": "11.1.0",
     "prettier": "^2.3.2",
     "react": "17.0.2",

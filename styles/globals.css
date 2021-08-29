@@ -1,3 +1,19 @@
+    
+  .dark {
+    --color-background: #111110;
+    --color-foreground: #FCFCFC;
+    --color-accent1: #F20587;
+    --color-accent2: #7326BF;
+    --color-Foreground: #FCFCFC;
+  }
+  
+  .light {
+    --color-background: #FCFCFC;
+    --color-foreground: #111110;
+    --color-accent1: #3E01FF;
+    --color-accent2: #1B0273;
+    --color-Foreground: #0D0D0D;
+  }
 
 @tailwind base;
 @tailwind components;

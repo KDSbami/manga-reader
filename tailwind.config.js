@@ -4,20 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: {
-          background: '#111110',
-          foreground: '#FCFCFC',
-          accent1: '#F20587',
-          accent2: '#7326BF',
-          accentForeground:'#FCFCFC'
-        },
-        light: {
-          background: '#FCFCFC',
-          foreground: '#111110',
-          accent1: '#3E01FF',
-          accent2: '#1B0273',
-          accentForeground:'#0D0D0D'
-        },
+        background: 'var(--color-background)',
+        foreground: 'var(--color-foreground)',
+        accent1: 'var(--color-accent)',
+        accent2: 'var(--color-accent2)',
+        accentForeground:'var(--color-accentForeground)',
         common: {
           background:'#1C1C1C',
           foreground:'#E0E0E0'
