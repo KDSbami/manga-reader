@@ -2,6 +2,10 @@
   .dark {
     --color-background: #111110;
     --color-foreground: #FCFCFC;
+    --color-background-50: rgba(17, 17, 16, 0.5);
+    --color-foreground-50: rgba(252, 252, 252,0.5);
+    --color-background-25: rgba(17, 17, 16, 0.25);
+    --color-foreground-25: rgba(252, 252, 252, 0.25);
     --color-accent1: #F20587;
     --color-accent2: #7326BF;
     --color-Foreground: #FCFCFC;
@@ -14,6 +18,10 @@
   .light {
     --color-background: #FCFCFC;
     --color-foreground: #111110;
+    --color-background-50: rgba(252, 252, 252, 0.5);
+    --color-foreground-50: rgba(17, 17, 16, 0.5);
+    --color-background-25: rgba(252, 252, 252, 0.25);
+    --color-foreground-25: rgba(17, 17, 16, 0.25);
     --color-accent1: #3E01FF;
     --color-accent2: #1B0273;
     --color-Foreground: #0D0D0D;

@@ -6,9 +6,17 @@ module.exports = {
       ...theme("colors"),
     }),
     extend: {
+
+      height: {
+        min:"min-content"
+       },
       colors: {
         background: "var(--color-background)",
         foreground: "var(--color-foreground)",
+        "background-50": "var(--color-background-50)",
+        "foreground-50": "var(--color-foreground-50)",
+        "background-25": "var(--color-background-25)",
+        "foreground-25": "var(--color-foreground-25)",
         accent1: "var(--color-accent1)",
         accent2: "var(--color-accent2)",
         "accent1-50": "var(--color-accent1-50)",
@@ -30,7 +38,11 @@ module.exports = {
         "10px": "10px",
         "5px": "5px",
         "30px": "30px",
+        "300px": "300px",
+        "240px":"240px",
         "250px": "250px",
+        "360px":"360px",
+        "450px":"450px",
         "1440px": "1440px",
       },
       grayscale: {
