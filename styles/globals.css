@@ -5,6 +5,10 @@
     --color-accent1: #F20587;
     --color-accent2: #7326BF;
     --color-Foreground: #FCFCFC;
+    --color-accent1-50: rgba(242, 5, 135, 0.5);
+    --color-accent2-50: rgba(115, 38, 191, 0.5);
+    --color-accent1-25: rgba(242, 5, 135, 0.25);
+    --color-accent2-25: rgba(115, 38, 191, 0.25);
   }
   
   .light {
@@ -13,9 +17,14 @@
     --color-accent1: #3E01FF;
     --color-accent2: #1B0273;
     --color-Foreground: #0D0D0D;
+    --color-accent1-50: rgba(62, 1, 255, 0.5);
+    --color-accent2-50: rgba(27, 2, 115, 0.5);
+    --color-accent1-25: rgba(62, 1, 255, 0.25);
+    --color-accent2-25: rgba(27, 2, 115, 0.25);
   }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;600;700;800&display=swap');
+

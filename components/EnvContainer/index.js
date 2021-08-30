@@ -5,7 +5,7 @@ import Container from "../Container";
 function EnvComponent({ children, forEnv }) {
   return (
     <>
-      {process.env.VERCEL_ENV === forEnv ? (
+      {process.env.ENVIRONMENT === forEnv ? (
         <Container>{children}</Container>
       ) : (
         <Error statusCode={`sussy baka`} />
