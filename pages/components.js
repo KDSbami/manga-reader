@@ -32,10 +32,8 @@ function Components() {
           </div>
           <div className="flex flex-row justify-center m-4 w-max">
             {[
-              {cover:"https://i.pinimg.com/originals/36/3d/d6/363dd6296ac84dc8876b13d734756771.jpg", name:"Jujutsu Kaisen"},
-              {cover:"https://cdn.archonia.com/images/1-70387203-1-1-original1/demon-slayer-kimetsu-no-yaiba-vol-06-gn-manga.jpg", name:"Demon Slayer"},
-              {cover:"https://i.pinimg.com/originals/ba/5a/70/ba5a7064b4b1f9b260df25901008e21c.jpg",name:"Nobara"},
-              {cover:"https://images-na.ssl-images-amazon.com/images/I/81HC2HywjbL.jpg",name:"Chainsaw Man"}
+              {cover:"https://uploads.mangadex.org/covers/32d76d19-8a05-4db0-9fc2-e0b0648fe9d0/f5873770-80a4-470e-a11c-63b709d87eb3.jpg",name:"Solo Leveling"},
+              {cover:"https://uploads.mangadex.org/covers/8f3e1818-a015-491d-bd81-3addc4d7d56a/4113e972-d228-4172-a885-cb30baffff97.jpg.256.jpg"},
             ].map((manga) => (
               <Card key={manga.name} image={manga.cover} title={manga.name} />
             ))}
