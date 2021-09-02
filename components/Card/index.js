@@ -1,19 +1,18 @@
 import Thumbnail from '../Thumbnail';
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-comment-textnodes */
+import Button from '../Button';
 export default function Home({image, title}) {
   // Scale ratio for card size is 1.4
   // TODO: Handle image sizes
   return (
-    <div className="w-min h-min bg-foreground rounded-2xl m-2">
-        <div className="p-px bg-gradient-to-tr from-background to-foreground rounded-t-2xl  m-px">
+    <div className="w-min flex flex-col justify-center">
+    <div className="w-min border-4 transition ease-in-out duration-500 border-foreground hover:border-accent1 rounded-2xl m-2 m-b-1 overflow-hidden">
+        <div className="flex flex-row justify-center align-center w-min h-full rounded-l overflow-hidden">
             <Thumbnail imageUrl={image}/>
-        </div>
-        <div className="p-px m-px">
-        <div className="p-1 w-240px h-65px text-background font-mulish font-regular text-xl">
-            {title}
-        </div>
-        </div>
+    </div>
+    </div>
+    <div className="flex flex-row justify-center w-240px text-foreground font-mulish font-thin text-base">
+        {title}
+    </div>
     </div>
   );
 }

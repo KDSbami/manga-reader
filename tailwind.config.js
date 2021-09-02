@@ -6,7 +6,9 @@ module.exports = {
       ...theme("colors"),
     }),
     extend: {
-
+      gridTemplateColumns: {
+       'cardHolder': 'repeat(auto-fill,minmax(256px, 1fr))',
+      },
       height: {
         min:"min-content"
        },
@@ -39,9 +41,11 @@ module.exports = {
         "5px": "5px",
         "30px": "30px",
         "300px": "300px",
-        "240px":"240px",
-        "250px": "250px",
+        "128px":"128px",
+        "180px":"180px",
+        "256px": "256px",
         "360px":"360px",
+        "363px":"363px",
         "450px":"450px",
         "1440px": "1440px",
       },
@@ -60,6 +64,7 @@ module.exports = {
     extend: {
       grayscale: ['hover'],
       display: ['hover'],
+      height: ['hover', 'focus'],
     },
   },
   plugins: [],
