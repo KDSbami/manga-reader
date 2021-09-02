@@ -14,8 +14,6 @@ export default function Thumbnail({ imageUrl }) {
     const fac = new FastAverageColor();
     fac.getColorAsync(imageUrl,{ algorithm: 'dominant' })
         .then(color => {
-            // container.style.backgroundColor = color.rgba;
-            // container.style.color = color.isDark ? '#fff' : '#000';
             setBackgroundColor(color.rgba);
             console.log(color)
         })
@@ -25,18 +23,16 @@ export default function Thumbnail({ imageUrl }) {
   }, [imageUrl])
   return (
     
-    <div className="flex w-128px h-180px overflow-hidden rounded-2xl" style={{backgroundColor:backgroundColor}}>
+    <div className="flex w-256px h-363px overflow-hidden" style={{backgroundColor:backgroundColor}}>
       <div className="h-min self-center">
         <img
+          crossOrigin="anonymous"
           src={imageUrl}
-          width="64"
-          className="filter rounded-2xl grayscale-0 hover:grayscale-0"
+          width="256"
+          className="filter grayscale-1"
           alt=""
         />
       </div>
     </div>
   );
 }
-
-// 480 x 720
-// 240 x 360
