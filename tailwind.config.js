@@ -14,7 +14,9 @@ module.exports = {
        },
       colors: {
         background: "var(--color-background)",
+        "background-accent":"var(--color-background-accent)",
         foreground: "var(--color-foreground)",
+        "foreground-accent": "var(--color-foreground-accent)",
         "background-50": "var(--color-background-50)",
         "foreground-50": "var(--color-foreground-50)",
         "background-25": "var(--color-background-25)",
@@ -34,6 +36,12 @@ module.exports = {
       fontFamily: {
         mulish: ["Mulish", "sans-serif"],
       },
+      borderRadius: {
+        'card': '2rem',
+      },
+      boxShadow:{
+        "lg-custom":"var(--shadow-custom)"
+      },
       spacing: {
         "20px": "20px",
         "65px": "65px",
@@ -43,7 +51,9 @@ module.exports = {
         "300px": "300px",
         "128px":"128px",
         "180px":"180px",
+        "194px": "194px",
         "256px": "256px",
+        "270px": "270px",
         "360px":"360px",
         "363px":"363px",
         "450px":"450px",
@@ -51,6 +61,8 @@ module.exports = {
       },
       grayscale: {
         50: "50%",
+        90:"90%",
+        25:"25%"
       },
       screens: {
         tablet: "640px",
@@ -65,6 +77,7 @@ module.exports = {
       grayscale: ['hover'],
       display: ['hover'],
       height: ['hover', 'focus'],
+      borderWidth: ['hover', 'focus'],
     },
   },
   plugins: [],

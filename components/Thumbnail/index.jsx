@@ -23,13 +23,13 @@ export default function Thumbnail({ imageUrl }) {
   }, [imageUrl])
   return (
     
-    <div className="flex w-256px h-363px overflow-hidden" style={{backgroundColor:backgroundColor}}>
+    <div className="flex w-194px h-270px overflow-hidden rounded-xl" style={{backgroundColor:backgroundColor}}>
       <div className="h-min self-center">
         <img
           crossOrigin="anonymous"
           src={imageUrl}
-          width="256"
-          className="filter grayscale-1"
+          width="194"
+          className="filter grayscale-1 transition ease-in-out duration-300 grayscale-25 hover:grayscale-0"
           alt=""
         />
       </div>

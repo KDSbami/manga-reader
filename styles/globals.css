@@ -1,7 +1,9 @@
     
   .dark {
-    --color-background: #111110;
-    --color-foreground: #FCFCFC;
+    --color-background: #121212;
+    --color-background-accent: #151515;
+    --color-foreground: #2C2C2C;
+    --color-foreground-accent: #FCFCFC;
     --color-background-50: rgba(17, 17, 16, 0.5);
     --color-foreground-50: rgba(252, 252, 252,0.5);
     --color-background-25: rgba(17, 17, 16, 0.25);
@@ -13,11 +15,14 @@
     --color-accent2-50: rgba(115, 38, 191, 0.5);
     --color-accent1-25: rgba(242, 5, 135, 0.25);
     --color-accent2-25: rgba(115, 38, 191, 0.25);
+    --shadow-custom: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   .light {
-    --color-background: #FCFCFC;
-    --color-foreground: #111110;
+    --color-background: #F6F8FC;
+    --color-background-accent: #FCFCFC;
+    --color-foreground: #FFFFFF;
+    --color-foreground-accent: #000;
     --color-background-50: rgba(252, 252, 252, 0.5);
     --color-foreground-50: rgba(17, 17, 16, 0.5);
     --color-background-25: rgba(252, 252, 252, 0.25);
@@ -29,6 +34,10 @@
     --color-accent2-50: rgba(27, 2, 115, 0.5);
     --color-accent1-25: rgba(62, 1, 255, 0.25);
     --color-accent2-25: rgba(27, 2, 115, 0.25);
+    --shadow-custom:0 1px 2px rgba(0,0,0,0.07), 
+                    0 2px 4px rgba(0,0,0,0.07), 
+                    0 4px 8px rgba(0,0,0,0.07), 
+                    0 8px 16px rgba(0,0,0,0.07);
   }
 
 @tailwind base;
