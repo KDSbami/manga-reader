@@ -4,6 +4,7 @@ import EnvContainer from "../components/EnvContainer";
 import DevComponent from "../components/DevComponent";
 import coverData from '../Constant/cardContainerData';
 import CardContainer from "../components/CardContainer";
+import Search from "../components/Search";
 
 function Components() {
   return (
@@ -31,6 +32,11 @@ function Components() {
             />
           </DevComponent>
         </div>
+        <DevComponent title="SearchBar">
+          <div className="w-300px">
+            <Search placeholder={"Search Manga Name"} inputCallback={()=>{console.log("input")}}/>
+          </div>
+        </DevComponent>
         <DevComponent title="Card Container">
               <CardContainer data={coverData}/>
           </DevComponent>
