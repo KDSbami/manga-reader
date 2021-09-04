@@ -2,7 +2,8 @@
   .dark {
     --color-background: #121212;
     --color-background-accent: #151515;
-    --color-foreground: #2C2C2C;
+    --color-foreground: #212121;
+    --color-foreground-shading: #1D1D1D;
     --color-foreground-accent: #FCFCFC;
     --color-background-50: rgba(17, 17, 16, 0.5);
     --color-foreground-50: rgba(252, 252, 252,0.5);
@@ -22,6 +23,7 @@
     --color-background: #F6F8FC;
     --color-background-accent: #FCFCFC;
     --color-foreground: #FFFFFF;
+    --color-foreground-shading:#FFFFFF;
     --color-foreground-accent: #000;
     --color-background-50: rgba(252, 252, 252, 0.5);
     --color-foreground-50: rgba(17, 17, 16, 0.5);

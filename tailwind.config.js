@@ -16,6 +16,7 @@ module.exports = {
         background: "var(--color-background)",
         "background-accent":"var(--color-background-accent)",
         foreground: "var(--color-foreground)",
+        "foreground-shading":"var(--color-foreground-shading)",
         "foreground-accent": "var(--color-foreground-accent)",
         "background-50": "var(--color-background-50)",
         "foreground-50": "var(--color-foreground-50)",

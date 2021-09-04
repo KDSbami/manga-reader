@@ -1,7 +1,7 @@
 import { React} from "react";
 import Card from "../Card";
 
-
+// breakout @ 820px
 function Components({ data }) {
   return (
               <div className="grid grid-cols-cardHolder">
