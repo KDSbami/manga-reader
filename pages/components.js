@@ -4,6 +4,7 @@ import EnvContainer from "../components/EnvContainer";
 import DevComponent from "../components/DevComponent";
 import coverData from '../Constant/cardContainerData';
 import CardContainer from "../components/CardContainer";
+import RoundedDiv from "../components/RoundedDiv";
 
 function Components() {
   return (
@@ -31,6 +32,12 @@ function Components() {
             />
           </DevComponent>
         </div>
+        <DevComponent title="100, 100, 12">
+          <RoundedDiv width={100} height={100} eccentricity={12} />
+        </DevComponent>
+        <DevComponent title="200, 100, 15">
+          <RoundedDiv width={200} height={100} eccentricity={15} />
+        </DevComponent>
         <DevComponent title="Card Container">
               <CardContainer data={coverData}/>
           </DevComponent>
