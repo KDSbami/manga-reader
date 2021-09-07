@@ -28,21 +28,20 @@ export default function Button({ onClick, children, title, type, animate }) {
       fontSpacing = "";
       break;
   }
-  let darkAnimation = (theme === 'dark')?" transition ease-in-out duration-150 bg-foreground hover:bg-foreground-shading" :" bg-foreground";
   switch (animate) {
     case true:
-      animation = `transition duration-75 ease-in-out text-foreground-accent hover:text-accent1 transition ease-in-out duration-150 shadow-lg hover:shadow-md ${darkAnimation} border border-foreground-25 hover:border-foreground`;
+      animation = `transition duration-500 ease-in-out bg-foreground-accent hover:bg-background transition duration-500 ease-in-out text-background hover:text-foreground-accent`;
       break;
     case false:
-      animation = `bg-foreground text-foreground-accent border border-foreground-25`;
+      animation = `bg-foreground-accent text-background`;
       break;
     default:
-      animation = `transition duration-75 ease-in-out bg-foreground hover:bg-foreground-shading transition duration-75 ease-in-out text-foreground-accent hover:text-accent1 transition ease-in-out duration-150 shadow-lg hover:shadow-md border border-foreground-25 hover:border-foreground ${darkAnimation}`;
+      animation = `transition duration-500 ease-in-out bg-foreground-accent hover:bg-background transition duration-500 ease-in-out text-background hover:text-foreground-accent`;
       break;
   }
   return (
     <button
-      className={`flex flex-row justify-center align-center  ${sizing} rounded-full ${animation}`}
+      className={`flex flex-row justify-center align-center border border-foreground-accent ${sizing} rounded-full ${animation}`}
       onClick={onClick}
     >
       {children ? (

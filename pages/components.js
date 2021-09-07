@@ -1,5 +1,6 @@
 import { React } from "react";
 import Button from "../components/Button";
+import LegacyButton from "../components/LegacyButton";
 import EnvContainer from "../components/EnvContainer";
 import DevComponent from "../components/DevComponent";
 import coverData from '../Constant/cardContainerData';
