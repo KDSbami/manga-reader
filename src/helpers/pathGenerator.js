@@ -1,6 +1,6 @@
-export const pathGenerator = (width, height, eccentricity) => { 
+export const pathGenerator = (width, height, eccentricity, res) => { 
     const twoPi = 2 * Math.PI;
-    const resolution = 100; // Change based on size of object for performance [250 - sweet spot]?
+    const resolution = res; // Change based on size of object for performance [250 - sweet spot]?
 
     let path = "M" + width + " " + 0;
     for (let theta = 0.0; theta < twoPi; theta += twoPi / resolution) {

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import styles from "../../styles/Home.module.css";
+import styles from "../../../styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
 import FastAverageColor from "fast-average-color";
 

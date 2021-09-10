@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Theme from "../components/Theme";
+import Theme from "../src/components/Theme";
 
 function MyApp({ Component, pageProps }) {
   return (

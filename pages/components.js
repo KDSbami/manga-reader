@@ -1,12 +1,11 @@
 import { React } from "react";
-import Button from "../components/Button";
-import LegacyButton from "../components/LegacyButton";
-import EnvContainer from "../components/EnvContainer";
-import DevComponent from "../components/DevComponent";
-import coverData from '../Constant/cardContainerData';
-import CardContainer from "../components/CardContainer";
-import RoundedDiv from "../components/RoundedDiv";
-import Search from "../components/Search";
+import Button from "../src/components/Button";
+import EnvContainer from "../src/components/EnvContainer";
+import DevComponent from "../src/components/DevComponent";
+import coverData from '../src/constants/cardContainerData';
+import CardContainer from "../src/components/CardContainer";
+import RoundedDiv from "../src/components/RoundedDiv";
+import Search from "../src/components/Search";
 
 function Components() {
   return (
@@ -37,8 +36,8 @@ function Components() {
         <DevComponent title="100, 100, 12">
           <RoundedDiv width={100} height={100} eccentricity={12} />
         </DevComponent>
-        <DevComponent title="200, 100, 15">
-          <RoundedDiv width={200} height={100} eccentricity={15} />
+        <DevComponent title="200, 100, 30">
+          <RoundedDiv width={200} height={100} eccentricity={12} resolution={250} />
         </DevComponent>
         <DevComponent title="SearchBar">
           <div className="w-300px">
