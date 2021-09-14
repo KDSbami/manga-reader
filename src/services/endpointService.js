@@ -1,6 +1,6 @@
 import supportedApis from '../constants/apiEndpoints';
 
-function getEndpoint(apiId,endpointId) {
+export function getEndpoint(apiId,endpointId) {
     if(apiId && endpointId) return supportedApis[apiId]['endpoints'][endpointId];
     return ""
 }
@@ -10,9 +10,9 @@ function getUrl(apiId) {
     return ""
 }
 
-export function getApiRoute(apiId, endpointId) {
+export function getApiRoute(apiId, endpoint) {
     
-    if(apiId && endpointId) return `${getUrl(apiId)}${getEndpoint(apiId,endpointId)}`;
+    if(apiId && endpoint) return `${getUrl(apiId)}${endpoint}`;
     console.error("Could not find matching API route");
     return ``;
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAuthData } from './endpointService';
+import { getAuthData } from '../services/endpointService';
 
 function credentialsHandler(config = { headers: {} },apiNetwork, apiSecurityHeaderKey = 'Authorization', apiSecurityHeaderValue = `Bearer *`) {
     const token = localStorage.getItem(`${apiNetwork}.auth`);

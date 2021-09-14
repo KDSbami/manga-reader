@@ -1,4 +1,4 @@
-import { httpHandler, secureHttpHandler } from './requestHandlers';
+import { httpHandler, secureHttpHandler } from '../helpers/requestHandlers';
 import { getApiRoute } from './endpointService';
 
 function fetchOperation(
@@ -37,34 +37,34 @@ function postOperation(
     });
 }
 
-export const fetchData = (apiId, endpointId, queryParams={}) => {
+export const fetchData = (apiId, endpoint, queryParams={}) => {
     return fetchOperation(
         httpHandler(),
-        getApiRoute(apiId,endpointId),
+        getApiRoute(apiId,endpoint),
         queryParams
     );
 };
 
-export const postData = (apiId, endpointId, dataContent) => {
+export const postData = (apiId, endpoint, dataContent) => {
     return postOperation(
         httpHandler(),
-        getApiRoute(apiId,endpointId),
+        getApiRoute(apiId,endpoint),
         dataContent
     );
 };
 
-export const fetchDataWithAuth = (apiId, endpointId, queryParams={}) => {
+export const fetchDataWithAuth = (apiId, endpoint, queryParams={}) => {
     return fetchOperation(
         secureHttpHandler(apiId),
-        getApiRoute(apiId,endpointId),
+        getApiRoute(apiId,endpoint),
         queryParams
     );
 };
 
-export const postDataWithAuth = (apiId, endpointId, dataContent) => {
+export const postDataWithAuth = (apiId, endpoint, dataContent) => {
     return postOperation(
         secureHttpHandler(apiId),
-        getApiRoute(apiId,endpointId),
+        getApiRoute(apiId,endpoint),
         dataContent
     );
 };
