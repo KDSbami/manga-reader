@@ -5,7 +5,7 @@ import DevComponent from "../src/components/DevComponent";
 import coverData from '../src/constants/cardContainerData';
 import CardContainer from "../src/components/CardContainer";
 import RoundedDiv from "../src/components/RoundedDiv";
-import SearchBar from "../src/components/SearchBar";
+import Search from "../src/components/Search";
 
 function Components() {
   return (
@@ -41,7 +41,7 @@ function Components() {
         </DevComponent>
         <DevComponent title="SearchBar">
           <div className="w-300px">
-            <SearchBar placeholder={"Search Manga Name"} inputCallback={()=>{console.log("input")}}/>
+            <Search placeholder={"Search Manga Name"} inputCallback={()=>{console.log("input")}}/>
           </div>
         </DevComponent>
         <DevComponent title="Card Container">

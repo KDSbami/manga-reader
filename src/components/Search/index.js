@@ -2,7 +2,7 @@ import { React} from "react";
 import { useContext } from 'react';
 import { ThemeContext } from "../Theme";
 // breakout @ 820px
-function SearchBar({ inputCallback, placeholder }) {
+function Search({ inputCallback, placeholder }) {
     let {theme, setTheme} = useContext(ThemeContext);
     let darkModeStyle = theme === 'dark'?"transition ease-in-out duration-150 bg-foreground hover:bg-foreground-shading" :"bg-foreground";
     let shadow = "border border-foreground-25 hover:border-foreground transition ease-in-out duration-150 shadow-xl hover:shadow-md";
@@ -13,4 +13,4 @@ function SearchBar({ inputCallback, placeholder }) {
     )
 }
 
-export default SearchBar;
+export default Search;
