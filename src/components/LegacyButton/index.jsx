@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import { ThemeContext } from "../Theme";
 
-export default function Button({ onClick, children, title, type, animate }) {
+const LegacyButton = ({ onClick, children, title, type, animate }) => {
   const { theme } = useContext(ThemeContext);
   let sizing;
   let fontSpacing;
@@ -53,4 +53,6 @@ export default function Button({ onClick, children, title, type, animate }) {
       )}
     </button>
   );
-}
+};
+
+export default LegacyButton;
