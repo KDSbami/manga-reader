@@ -18,7 +18,7 @@ const getInitialTheme = (_) => {
   return "dark";
 };
 
-export default function Theme({ initialTheme, children }) {
+const Theme = ({ initialTheme, children }) => {
   const [theme, setTheme] = useState(getInitialTheme);
   const defaultContext = {
     theme,
@@ -51,4 +51,6 @@ export default function Theme({ initialTheme, children }) {
       {children}
     </ThemeContext.Provider>
   );
-}
+};
+
+export default Theme;

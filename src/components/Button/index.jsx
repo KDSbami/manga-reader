@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import { ThemeContext } from "../Theme";
 
-export default function Button({ onClick, children, title, type, animate }) {
+const Button = ({ onClick, children, title, type, animate }) => {
   const { theme } = useContext(ThemeContext);
   let sizing;
   let fontSpacing;
@@ -28,7 +28,10 @@ export default function Button({ onClick, children, title, type, animate }) {
       fontSpacing = "";
       break;
   }
-  let darkAnimation = (theme === 'dark')?" transition ease-in-out duration-150 bg-foreground hover:bg-foreground-shading" :" bg-foreground";
+  let darkAnimation =
+    theme === "dark"
+      ? " transition ease-in-out duration-150 bg-foreground hover:bg-foreground-shading"
+      : " bg-foreground";
   switch (animate) {
     case true:
       animation = `transition duration-75 ease-in-out text-foreground-accent hover:text-accent1 transition ease-in-out duration-150 shadow-lg hover:shadow-md ${darkAnimation} border border-foreground-25 hover:border-foreground`;
@@ -54,4 +57,6 @@ export default function Button({ onClick, children, title, type, animate }) {
       )}
     </button>
   );
-}
+};
+
+export default Button;

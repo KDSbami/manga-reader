@@ -2,12 +2,12 @@ import { React } from "react";
 import Button from "../src/components/Button";
 import EnvContainer from "../src/components/EnvContainer";
 import DevComponent from "../src/components/DevComponent";
-import coverData from '../src/constants/cardContainerData';
+import coverData from "../src/constants/cardContainerData";
 import CardContainer from "../src/components/CardContainer";
 import RoundedDiv from "../src/components/RoundedDiv";
 import Search from "../src/components/Search";
 
-function Components() {
+const Components = () => {
   return (
     <>
       <EnvContainer forEnv="development">
@@ -37,19 +37,29 @@ function Components() {
           <RoundedDiv width={100} height={100} eccentricity={12} />
         </DevComponent>
         <DevComponent title="200, 100, 30">
-          <RoundedDiv width={200} height={100} eccentricity={12} resolution={250} />
+          <RoundedDiv
+            width={200}
+            height={100}
+            eccentricity={12}
+            resolution={250}
+          />
         </DevComponent>
         <DevComponent title="SearchBar">
           <div className="w-300px">
-            <Search placeholder={"Search Manga Name"} inputCallback={()=>{console.log("input")}}/>
+            <Search
+              placeholder={"Search Manga Name"}
+              inputCallback={() => {
+                console.log("input");
+              }}
+            />
           </div>
         </DevComponent>
         <DevComponent title="Card Container">
-              <CardContainer data={coverData}/>
+          <CardContainer data={coverData} />
         </DevComponent>
       </EnvContainer>
     </>
   );
-}
+};
 
 export default Components;

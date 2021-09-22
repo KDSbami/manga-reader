@@ -4,22 +4,24 @@ import styles from "../../../styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
 import FastAverageColor from "fast-average-color";
 
-export default function Thumbnail({ imageUrl }) {
+const Thumbnail = ({ imageUrl }) => {
   // Scale ratio for card size is 1.4
   // TODO: Handle image sizes
   // add average color support
-  
+
   const imageRef = useRef(null);
 
-  const [backgroundColor,setBackgroundColor] = useState('');
+  const [backgroundColor, setBackgroundColor] = useState("");
   useEffect(() => {
     const fac = new FastAverageColor();
-    const color = fac.getColor(imageRef.current, {algorithm: "dominant"});
+    const color = fac.getColor(imageRef.current, { algorithm: "dominant" });
     setBackgroundColor(color.rgba);
-  }, [imageUrl])
+  }, [imageUrl]);
   return (
-    
-    <div className="flex w-194px h-270px overflow-hidden rounded-xl" style={{backgroundColor:backgroundColor}}>
+    <div
+      className="flex w-194px h-270px overflow-hidden rounded-xl"
+      style={{ backgroundColor: backgroundColor }}
+    >
       <div className="h-min self-center">
         <img
           ref={imageRef}
@@ -32,4 +34,6 @@ export default function Thumbnail({ imageUrl }) {
       </div>
     </div>
   );
-}
+};
+
+export default Thumbnail;

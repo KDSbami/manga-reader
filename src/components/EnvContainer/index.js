@@ -2,7 +2,7 @@ import { React } from "react";
 import Error from "next/error";
 import Container from "../Container";
 
-function EnvComponent({ children, forEnv }) {
+const EnvComponent = ({ children, forEnv }) => {
   return (
     <>
       {process.env.ENVIRONMENT === forEnv ? (
@@ -12,6 +12,6 @@ function EnvComponent({ children, forEnv }) {
       )}
     </>
   );
-}
+};
 
 export default EnvComponent;
