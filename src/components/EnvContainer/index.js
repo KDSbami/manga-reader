@@ -1,17 +1,23 @@
-import { React } from "react";
+import { React, useEffect, useState } from "react";
 import Error from "next/error";
 import Container from "../Container";
 
-const EnvComponent = ({ children, forEnv }) => {
+function EnvComponent({ children, forEnv }) {
+  const [environment, setEnvironment] = useState("");
+
+  useEffect(() => {
+    setEnvironment(process.env.ENVIRONMENT);
+  },[]);
+  
   return (
     <>
-      {process.env.ENVIRONMENT === forEnv ? (
+      { environment === forEnv ? (
         <Container>{children}</Container>
       ) : (
         <Error statusCode={`sussy baka`} />
       )}
     </>
   );
-};
+}
 
 export default EnvComponent;
