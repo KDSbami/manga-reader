@@ -1,8 +1,10 @@
 import { React } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../Theme";
+import { useRouter } from 'next/router';
 // breakout @ 820px
-const Search = ({ inputCallback, placeholder }) => {
+const SearchBar = ({ inputCallback, placeholder }) => {
+  const router = useRouter();
   let { theme, setTheme } = useContext(ThemeContext);
   let darkModeStyle =
     theme === "dark"
@@ -17,10 +19,15 @@ const Search = ({ inputCallback, placeholder }) => {
       <input
         placeholder={placeholder}
         className={`placeholder-foreground-25 hover:placeholder-accent1 outline-none bg-foreground text-foreground-accent text-xl w-full ${darkModeStyle}`}
-        onInput={inputCallback}
+        onInput={(e) => {
+            router.push({
+              pathname: "/search",
+              query: `q=${e.target.value}`,
+            })
+          }}
       />
     </div>
   );
 };
 
-export default Search;
+export default SearchBar;
