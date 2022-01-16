@@ -1,7 +1,8 @@
+// TODO: Debounce query building and find autocomplete api
 import { React } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../Theme";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 // breakout @ 820px
 const SearchBar = ({ inputCallback, placeholder }) => {
   const router = useRouter();
@@ -19,12 +20,14 @@ const SearchBar = ({ inputCallback, placeholder }) => {
       <input
         placeholder={placeholder}
         className={`placeholder-foreground-25 hover:placeholder-accent1 outline-none bg-foreground text-foreground-accent text-xl w-full ${darkModeStyle}`}
-        onInput={(e) => {
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
             router.push({
               pathname: "/search",
               query: `q=${e.target.value}`,
-            })
-          }}
+            });
+          }
+        }}
       />
     </div>
   );
