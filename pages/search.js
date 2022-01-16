@@ -7,7 +7,7 @@ const Search = () => {
   return (
   <EnvContainer forEnv="development">
     <DevComponent>
-      <SearchBar>
+      <SearchBar placeholder="search for manga!">
       </SearchBar>
     </DevComponent>
   </EnvContainer>
