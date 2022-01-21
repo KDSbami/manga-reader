@@ -1,30 +1,11 @@
 // TODO: Debounce query building and find autocomplete api
 // Need to change from onKeyDown listener -> leads to API call spam on keyHold
-import { React } from "react";
+import { React, useEffect, useState } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../Theme";
 import { useRouter } from "next/router";
 // breakout @ 820px
-const SearchBar = ({ inputCallback, placeholder }) => {
-  const router = useRouter();
-
-  const searchCall = (query) => {
-    fetch(`/api/search?q=${query}`)
-      .then((response) => response.json())
-      .then((response) => console.log(response));
-  };
-
-  const onSearch = (e) => {
-    const query = `${e.target.value}`;
-    if (e.key === "Enter" && query.length) {
-      router.push({
-        pathname: "/search",
-        query: `q=${query}`,
-      });
-      searchCall(query);
-    }
-  };
-
+const InputField = ({ placeholder, value, inputCallback, handleKeyDown }) => {
   let { theme, setTheme } = useContext(ThemeContext);
   let darkModeStyle =
     theme === "dark"
@@ -38,11 +19,13 @@ const SearchBar = ({ inputCallback, placeholder }) => {
     >
       <input
         placeholder={placeholder}
+        value={value}
         className={`placeholder-foreground-25 hover:placeholder-accent1 outline-none bg-foreground text-foreground-accent text-xl w-full ${darkModeStyle}`}
-        onKeyDown={onSearch}
+        onChange={inputCallback}
+        onKeyDown={handleKeyDown}
       />
     </div>
   );
 };
 
-export default SearchBar;
+export default InputField;

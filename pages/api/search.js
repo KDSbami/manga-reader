@@ -3,7 +3,7 @@ const searchCall = (req, res) => {
   // fetchDataWithAuth() here and return to Container? @KDSbami
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ apiGot: query }));
+  res.end(JSON.stringify({ data: query }));
 };
 
 export default searchCall;
