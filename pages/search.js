@@ -1,14 +1,9 @@
 import Container from "../src/components/Container";
 import InputField from "../src/components/InputField";
+import CardContainer from "../src/components/CardContainer";
+import { fetchDataWithAuth } from "../src/services/apiServices";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import CardContainer from "../src/components/CardContainer";
-
-const searchCall = (query) => {
-  fetch(`/api/search?q=${query}`)
-    .then((response) => response.json())
-    .then((response) => response);
-};
 
 const Search = () => {
   const router = useRouter();
@@ -16,11 +11,12 @@ const Search = () => {
   const [results, setResults] = useState([]);
 
   const searchCall = (query) => {
-    fetch(`/api/search?q=${query}`)
-      .then((response) => response.json())
-      .then((response) => {
-        setResults(response.data);
-      });
+    fetchDataWithAuth("api.mangadex.org", "GET_MANGA_LIST", {
+      title: query,
+      limit: "25",
+    }).then((res) => {
+      console.log(res);
+    });
   };
 
   const onKeyDown = (e) => {
