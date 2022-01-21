@@ -1,8 +1,11 @@
-import { React } from "react";
+// TODO: Debounce query building and find autocomplete api
+// Need to change from onKeyDown listener -> leads to API call spam on keyHold
+import { React, useEffect, useState } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../Theme";
+import { useRouter } from "next/router";
 // breakout @ 820px
-const Search = ({ inputCallback, placeholder }) => {
+const InputField = ({ placeholder, value, inputCallback, handleKeyDown }) => {
   let { theme, setTheme } = useContext(ThemeContext);
   let darkModeStyle =
     theme === "dark"
@@ -16,11 +19,13 @@ const Search = ({ inputCallback, placeholder }) => {
     >
       <input
         placeholder={placeholder}
+        value={value}
         className={`placeholder-foreground-25 hover:placeholder-accent1 outline-none bg-foreground text-foreground-accent text-xl w-full ${darkModeStyle}`}
-        onInput={inputCallback}
+        onChange={inputCallback}
+        onKeyDown={handleKeyDown}
       />
     </div>
   );
 };
 
-export default Search;
+export default InputField;
