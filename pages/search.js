@@ -2,6 +2,7 @@ import Container from "../src/components/Container";
 import InputField from "../src/components/InputField";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import CardContainer from "../src/components/CardContainer";
 
 const searchCall = (query) => {
   fetch(`/api/search?q=${query}`)
@@ -18,7 +19,7 @@ const Search = () => {
     fetch(`/api/search?q=${query}`)
       .then((response) => response.json())
       .then((response) => {
-        setResults(Array.from(response.data));
+        setResults(response.data);
       });
   };
 
@@ -41,6 +42,7 @@ const Search = () => {
         handleKeyDown={onKeyDown}
         value={query}
       />
+      {results ? <CardContainer data={results} /> : null}
     </Container>
   );
 };
