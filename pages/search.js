@@ -9,6 +9,13 @@ const Search = () => {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const { q } = router.query;
+
+  useEffect(() => {
+    if (!q) return;
+    setQuery(q);
+    searchCall(q);
+  }, [q]);
 
   const searchCall = (query) => {
     fetchDataWithAuth("api.mangadex.org", "GET_MANGA_LIST", {
