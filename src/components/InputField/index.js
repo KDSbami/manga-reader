@@ -1,9 +1,6 @@
-// TODO: Debounce query building and find autocomplete api
-// Need to change from onKeyDown listener -> leads to API call spam on keyHold
-import { React, useEffect, useState } from "react";
-import { useContext } from "react";
+// TODO: https://github.com/KDSbami/manga-reader/issues/38
+import { React, useContext } from "react";
 import { ThemeContext } from "../Theme";
-import { useRouter } from "next/router";
 // breakout @ 820px
 const InputField = ({ placeholder, value, inputCallback, handleKeyDown }) => {
   let { theme, setTheme } = useContext(ThemeContext);
