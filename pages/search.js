@@ -18,11 +18,15 @@ const Search = () => {
   }, [q]);
 
   const searchCall = (query) => {
+    let searchData = [];
     fetchDataWithAuth("api.mangadex.org", "GET_MANGA_LIST", {
       title: query,
       limit: "25",
     }).then((res) => {
-      console.log(res);
+      res.forEach((manga) => {
+        searchData.push({ name: manga.attributes.title.en, cover: "" });
+      });
+      setResults(searchData);
     });
   };
 
