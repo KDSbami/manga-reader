@@ -56,7 +56,7 @@ const Search = () => {
   };
 
   return (
-    <Container forEnv="development">
+    <Container>
       <Head>
         <title>{title}</title>
       </Head>
