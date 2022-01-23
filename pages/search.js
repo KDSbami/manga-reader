@@ -2,17 +2,20 @@ import Container from "../src/components/Container";
 import InputField from "../src/components/InputField";
 import CardContainer from "../src/components/CardContainer";
 import { fetchDataWithAuth } from "../src/services/apiServices";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 const Search = () => {
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const [title, setTitle] = useState("Search");
   const [results, setResults] = useState([]);
   const { q } = router.query;
 
   useEffect(() => {
     if (!q) return;
+    setTitle(q);
     setQuery(q);
     searchCall(q);
   }, [q]);
@@ -44,6 +47,7 @@ const Search = () => {
     if (e.key === "Enter") {
       router.push(`/search?q=${query}`);
       searchCall(query);
+      setTitle(query);
     }
   };
 
@@ -53,6 +57,9 @@ const Search = () => {
 
   return (
     <Container forEnv="development">
+      <Head>
+        <title>{title}</title>
+      </Head>
       <InputField
         placeholder={"Search for a manga"}
         inputCallback={onQueryChange}
