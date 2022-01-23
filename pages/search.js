@@ -21,10 +21,20 @@ const Search = () => {
     let searchData = [];
     fetchDataWithAuth("api.mangadex.org", "GET_MANGA_LIST", {
       title: query,
+      "contentRating[]": "safe",
+      "includes[]": "cover_art",
       limit: "25",
     }).then((res) => {
       res.forEach((manga) => {
-        searchData.push({ name: manga.attributes.title.en, cover: "" });
+        let coverUrl = "";
+        manga.relationships.forEach((relation) => {
+          if (relation.type !== "cover_art") return;
+          coverUrl = `https://uploads.mangadex.org/covers/${manga.id}/${relation.attributes.fileName}`;
+        });
+        searchData.push({
+          name: manga.attributes.title.en,
+          cover: coverUrl,
+        });
       });
       setResults(searchData);
     });
