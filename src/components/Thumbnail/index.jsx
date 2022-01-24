@@ -14,8 +14,10 @@ const Thumbnail = ({ imageUrl }) => {
   const [backgroundColor, setBackgroundColor] = useState("");
   useEffect(() => {
     const fac = new FastAverageColor();
-    const color = fac.getColor(imageRef.current, { algorithm: "dominant" });
-    setBackgroundColor(color.rgba);
+    fac.getColorAsync(imageUrl, { algorithm: "dominant" })
+    .then((color) => {
+      setBackgroundColor(color.rgba);
+    });
   }, [imageUrl]);
   return (
     <div
