@@ -14,10 +14,11 @@ const Search = () => {
   const { q } = router.query;
 
   useEffect(() => {
-    if (!q) return;
-    setTitle(q);
-    setQuery(q);
-    searchCall(q);
+    if (q !== undefined) {
+      setTitle(q === "" ? "Manga" : q);
+      setQuery(q);
+      searchCall(q);
+    }
   }, [q]);
 
   const searchCall = (query) => {
@@ -46,7 +47,6 @@ const Search = () => {
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       router.push(`/search?q=${query}`);
-      searchCall(query);
       setTitle(query);
     }
   };
