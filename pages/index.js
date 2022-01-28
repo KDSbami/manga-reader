@@ -21,7 +21,7 @@ const Home = () => {
     <Container>
       <div className="grid grid-rows-5 h-full">
         <div className="row-start-3 pt-2">
-          <div className="max-w-640px m-auto">
+          <div className="max-w-640px m-auto p-4">
             <InputField
               placeholder={""}
               inputCallback={onQueryChange}
