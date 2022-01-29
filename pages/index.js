@@ -40,9 +40,7 @@ const Home = () => {
               inputCallback={onQueryChange}
               handleKeyDown={onKeyDown}
               value={query}
-              // advised not to use until the inputField hover is fixed for divs
-              // icon={searchIcon} 
-
+              icon={searchIcon} 
             />
           </div>
         </div>  
