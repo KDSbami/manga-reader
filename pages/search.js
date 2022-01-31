@@ -5,6 +5,7 @@ import { fetchDataWithAuth } from "../src/services/apiServices";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { createRouteLoader } from "next/dist/client/route-loader";
 
 const Search = () => {
   const router = useRouter();
@@ -36,6 +37,7 @@ const Search = () => {
           coverUrl = `https://uploads.mangadex.org/covers/${manga.id}/${relation.attributes.fileName}`;
         });
         searchData.push({
+          id: manga.id,
           name: manga.attributes.title.en,
           cover: coverUrl,
         });

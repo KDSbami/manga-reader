@@ -1,11 +1,13 @@
 import Thumbnail from "../Thumbnail";
 import { useContext } from "react";
+import { useRouter } from "next/router";
 import { ThemeContext } from "../Theme";
 
-const Card = ({ image, title }) => {
+const Card = ({ image, title, id }) => {
   // Scale ratio for card size is 1.4
   // TODO: Handle image sizes
   let { theme, setTheme } = useContext(ThemeContext);
+  const router = useRouter();
   let darkModeStyle =
     theme === "dark"
       ? "transition ease-in-out duration-150 bg-foreground hover:bg-foreground-shading"
@@ -13,6 +15,7 @@ const Card = ({ image, title }) => {
   return (
     <div
       className={`w-min flex flex-col justify-center transition ease-in-out duration-75 text-foreground-accent hover:text-accent1`}
+      onClick={() => router.push(`/manga/${id}`)}
     >
       <div
         className={`w-256px h-363px rounded-card m-2 m-b-1 overflow-hidden transition ease-in-out duration-150 shadow-lg hover:shadow-md ${darkModeStyle}`}
