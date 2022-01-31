@@ -5,7 +5,6 @@ import { fetchDataWithAuth } from "../src/services/apiServices";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { createRouteLoader } from "next/dist/client/route-loader";
 
 const Search = () => {
   const router = useRouter();
