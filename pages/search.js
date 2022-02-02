@@ -11,6 +11,7 @@ const Search = () => {
   const [query, setQuery] = useState("");
   const [title, setTitle] = useState("Search");
   const [results, setResults] = useState([]);
+  const [empty, setEmpty] = useState(false);
   const { q } = router.query;
 
   useEffect(() => {
@@ -40,7 +41,12 @@ const Search = () => {
           cover: coverUrl,
         });
       });
-      setResults(searchData);
+      if (searchData.length === 0) {
+        setEmpty(!empty);
+        setResults([]);
+      } else {
+        setResults(searchData);
+      }
     });
   };
 
@@ -66,6 +72,11 @@ const Search = () => {
         handleKeyDown={onKeyDown}
         value={query}
       />
+      {empty ? (
+        <div className="flex justify-center my-10">
+          <div className="center">No results :(</div>
+        </div>
+      ) : null}
       {results ? <CardContainer data={results} /> : null}
     </Container>
   );
