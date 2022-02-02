@@ -72,7 +72,11 @@ const Search = () => {
         handleKeyDown={onKeyDown}
         value={query}
       />
-      {empty ? <div className="flex justify-center my-10"><div className="center">No results :(</div></div> : null}
+      {empty ? (
+        <div className="flex justify-center my-10">
+          <div className="center">No results :(</div>
+        </div>
+      ) : null}
       {results ? <CardContainer data={results} /> : null}
     </Container>
   );
