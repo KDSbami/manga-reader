@@ -45,6 +45,7 @@ const Search = () => {
         setEmpty(!empty);
         setResults([]);
       } else {
+        setEmpty(false);
         setResults(searchData);
       }
     });
