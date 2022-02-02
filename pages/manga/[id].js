@@ -31,8 +31,9 @@ const Manga = () => {
               return;
             }
           });
+          // get width 512 and downsample to 384 in <Showcase/>
           setCover(
-            `https://uploads.mangadex.org/covers/${res.data.id}/${fileName}`
+            `https://uploads.mangadex.org/covers/${res.data.id}/${fileName}.512.jpg`
           );
         });
     } catch (err) {
@@ -46,28 +47,28 @@ const Manga = () => {
         <title>{title}</title>
       </Head>
       <Container>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex items-end">
           <Showcase coverUrl={cover} mangaTitle={title} />
-          <div>
-            <div>{title}</div>
+          <div className="py-48">
+            {title}
             <div className="text-sm">{description}</div>
+            <Button
+              type="small"
+              animate={true}
+              title={`Read ${title}`}
+              onClick={() => {
+                alert(`reading`);
+              }}
+            />
+            <Button
+              type="small"
+              animate={true}
+              title={`Search for more`}
+              onClick={() => {
+                router.push("/search");
+              }}
+            />
           </div>
-          <Button
-            type="small"
-            animate={true}
-            title={`Read ${title}`}
-            onClick={() => {
-              alert(`reading`);
-            }}
-          />
-          <Button
-            type="small"
-            animate={true}
-            title={`Search for more`}
-            onClick={() => {
-              router.push("/search");
-            }}
-          />
         </div>
       </Container>
     </>
