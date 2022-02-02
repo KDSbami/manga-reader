@@ -1,6 +1,8 @@
 import Container from "../../src/components/Container";
 import Button from "../../src/components/Button";
+import Showcase from "../../src/components/Showcase";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { useState, useEffect } from "react";
 
 const Manga = () => {
@@ -39,27 +41,36 @@ const Manga = () => {
   };
 
   return (
-    <Container>
-      <div>{title}</div>
-      <div className="text-sm">{description}</div>
-      <Button
-        type="small"
-        animate={true}
-        title={`Read ${title}`}
-        onClick={() => {
-          alert(`reading`);
-        }}
-      />
-      <Button
-        type="small"
-        animate={true}
-        title={`Search for more`}
-        onClick={() => {
-          router.push("/search");
-        }}
-      />
-      <img src={cover} alt="cover"></img>
-    </Container>
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <Container>
+        <div className="flex flex-row flex-wrap">
+          <Showcase coverUrl={cover} mangaTitle={title} />
+          <div>
+            <div>{title}</div>
+            <div className="text-sm">{description}</div>
+          </div>
+          <Button
+            type="small"
+            animate={true}
+            title={`Read ${title}`}
+            onClick={() => {
+              alert(`reading`);
+            }}
+          />
+          <Button
+            type="small"
+            animate={true}
+            title={`Search for more`}
+            onClick={() => {
+              router.push("/search");
+            }}
+          />
+        </div>
+      </Container>
+    </>
   );
 };
 
