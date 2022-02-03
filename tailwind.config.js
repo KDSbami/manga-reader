@@ -12,6 +12,9 @@ module.exports = {
       gridTemplateColumns: {
        'cardHolder': 'repeat(auto-fill,minmax(256px, 1fr))',
       },
+      maxWidth: {
+        "640px":"640px"
+      },
       height: {
         min:"min-content"
        },
