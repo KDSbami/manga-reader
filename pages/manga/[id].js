@@ -7,15 +7,17 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 
 const Manga = () => {
-  let manga = {};
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [cover, setCover] = useState("");
   const [query, setQuery] = useState(title);
+  const { id } = router.query;
   useEffect(() => {
-    fetchManga();
-  }, []);
+    if (id !== undefined) {
+      fetchManga();
+    }
+  }, [id]);
 
   const onQueryChange = (e) => {
     setQuery(e.target.value);
@@ -27,10 +29,11 @@ const Manga = () => {
   };
 
   const fetchManga = () => {
-    if (!router.query.id) return;
+    console.log("fetch")
+    if (!id) return;
     try {
       fetch(
-        `https://api.mangadex.org/manga/${router.query.id}?&includes[]=cover_art`
+        `https://api.mangadex.org/manga/${id}?&includes[]=cover_art`
       )
         .then((res) => res.json())
         .then((res) => {
