@@ -7,7 +7,7 @@ const CardContainer = ({ data }) => {
     <div className="grid grid-cols-cardHolder">
       {data.map((manga, index) => (
         <div className="flex flex-row justify-center " key={manga.name + index}>
-          <Card image={manga.cover} title={manga.name} />
+          <Card image={manga.cover} title={manga.name} id={manga.id} />
         </div>
       ))}
     </div>

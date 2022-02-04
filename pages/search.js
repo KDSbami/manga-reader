@@ -37,6 +37,7 @@ const Search = () => {
           coverUrl = `https://uploads.mangadex.org/covers/${manga.id}/${relation.attributes.fileName}`;
         });
         searchData.push({
+          id: manga.id,
           name: manga.attributes.title.en,
           cover: coverUrl,
         });
