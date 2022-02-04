@@ -2,6 +2,7 @@ import Container from "../../src/components/Container";
 import Button from "../../src/components/Button";
 import Showcase from "../../src/components/Showcase";
 import InputField from "../../src/components/InputField";
+import DevComponent from "../../src/components/DevComponent";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useEffect } from "react";
@@ -60,8 +61,8 @@ const Manga = () => {
         <title>{title}</title>
       </Head>
       <Container>
-        <div className="grid grid-cols-2 grid-template-rows: repeat(1, minmax(0, 1fr)) gap-y-2">
-          <div className="row-start-1 col-span-full">
+        <div className="grid grid-template-cols: repeat(2, minmax(0, auto)) grid-template-rows: repeat(1, minmax(0, 1fr)) gap-y-2 gap-x-4">
+          <div className="row-start-1 col-span-2">
             <InputField
               inputCallback={onQueryChange}
               handleKeyDown={onKeyDown}
@@ -78,11 +79,11 @@ const Manga = () => {
               ) : null}
             </div>
           </div>
-          <div className="col-start-2">
+          <div className="col-start-2 row-start-2">
             <div>
               {title}
-              <div className="text-sm">{description}</div>
-              <div className="row-end-2">
+              <div className="text-sm font-normal">{description}</div>
+              <div className="py-4 row-end-2">
                 <Button
                   type="small"
                   animate={true}
