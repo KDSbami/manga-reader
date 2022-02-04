@@ -88,7 +88,7 @@ const Manga = () => {
                   animate={true}
                   title={`read ${title}`}
                   onClick={() => {
-                    alert(`reading`);
+                    router.push(`read?id=${router.query.id}`);
                   }}
                 />
               </div>
