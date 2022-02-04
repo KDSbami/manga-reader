@@ -7,7 +7,6 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 
 const Manga = () => {
-  let manga = {};
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -82,7 +81,7 @@ const Manga = () => {
                   animate={true}
                   title={`read ${title}`}
                   onClick={() => {
-                    alert(`reading`);
+                    router.push(`read?id=${router.query.id}`);
                   }}
                 />
               </div>
