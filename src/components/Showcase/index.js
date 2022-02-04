@@ -5,7 +5,6 @@ const Showcase = ({ coverUrl, mangaTitle }) => {
         crossOrigin="anonymous"
         src={coverUrl}
         width="384"
-        className="filter grayscale-1 transition ease-in-out duration-300 grayscale-25 hover:grayscale-0"
         alt={mangaTitle}
       />
     </div>
