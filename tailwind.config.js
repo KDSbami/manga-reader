@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    content: ["./src/pages/**/*.{js,jsx,ts,tsx}", "./src/components/**/*.{js,jsx,ts,tsx}"]
+    content: ["./src/**/*.{js,ts,jsx,tsx}","./pages/**/*.{js,ts,jsx,tsx}"]
     // These options are passed through directly to PurgeCSS
   },
   darkMode: false, // or 'media' or 'class'
