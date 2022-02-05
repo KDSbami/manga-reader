@@ -45,7 +45,7 @@ const Button = ({ onClick, children, title, type, animate }) => {
   }
   return (
     <button
-      className={`flex flex-row justify-center align-center  ${sizing} rounded-full ${animation}`}
+      className={`flex flex-row justify-center align-center  ${sizing} rounded-full ${animation} hover: cursor-pointer`}
       onClick={onClick}
     >
       {children ? (
