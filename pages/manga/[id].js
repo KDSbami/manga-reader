@@ -69,12 +69,7 @@ const Manga = () => {
           </div>
           <div className="row-start-2">
             <div className="col-start-1">
-            {cover ? (
-                <Showcase
-                  coverUrl={cover}
-                  mangaTitle={title}
-                />
-              ) : null}
+              {cover ? <Showcase coverUrl={cover} mangaTitle={title} /> : null}
             </div>
           </div>
           <div className="col-start-2 row-start-2">
