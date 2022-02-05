@@ -2,7 +2,6 @@ import Container from "../../src/components/Container";
 import Button from "../../src/components/Button";
 import Showcase from "../../src/components/Showcase";
 import InputField from "../../src/components/InputField";
-import DevComponent from "../../src/components/DevComponent";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useEffect } from "react";
@@ -30,7 +29,6 @@ const Manga = () => {
   };
 
   const fetchManga = () => {
-    console.log("fetch");
     if (!id) return;
     try {
       fetch(`https://api.mangadex.org/manga/${id}?&includes[]=cover_art`)
@@ -71,7 +69,12 @@ const Manga = () => {
           </div>
           <div className="row-start-2">
             <div className="col-start-1">
-              <Showcase coverUrl={cover} mangaTitle={title} />
+            {cover ? (
+                <Showcase
+                  coverUrl={cover}
+                  mangaTitle={title}
+                />
+              ) : null}
             </div>
           </div>
           <div className="col-start-2 row-start-2">
