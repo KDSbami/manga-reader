@@ -1,11 +1,14 @@
+import Image from "next/image";
+
 const Showcase = ({ coverUrl, mangaTitle }) => {
   return (
     <div className="overflow-hidden w-full h-min rounded-xl">
-      <img
-        crossOrigin="anonymous"
+      <Image
         src={coverUrl}
-        width="384"
-        className="filter grayscale-1 transition ease-in-out duration-300 grayscale-25 hover:grayscale-0"
+        crossOrigin="anonymous"
+        // w:h = 2:3
+        width="256"
+        height="384"
         alt={mangaTitle}
       />
     </div>
