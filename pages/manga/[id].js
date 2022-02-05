@@ -29,12 +29,10 @@ const Manga = () => {
   };
 
   const fetchManga = () => {
-    console.log("fetch")
+    console.log("fetch");
     if (!id) return;
     try {
-      fetch(
-        `https://api.mangadex.org/manga/${id}?&includes[]=cover_art`
-      )
+      fetch(`https://api.mangadex.org/manga/${id}?&includes[]=cover_art`)
         .then((res) => res.json())
         .then((res) => {
           setTitle(res.data.attributes.title.en);
@@ -72,7 +70,12 @@ const Manga = () => {
           </div>
           <div className="row-start-2">
             <div className="w-full col-start-1">
-              <Showcase coverUrl={cover} mangaTitle={title} />
+              {cover ? (
+                <Showcase
+                  coverUrl={cover}
+                  mangaTitle={title}
+                />
+              ) : null}
             </div>
           </div>
           <div className="col-start-2">
