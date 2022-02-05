@@ -14,13 +14,13 @@ const Card = ({ image, title, id }) => {
       : "bg-foreground";
   return (
     <div
-      className={`w-min flex flex-col justify-center transition ease-in-out duration-75 text-foreground-accent filter grayscale-25 hover:grayscale-0 hover:text-accent1 cursor-pointer`}
+      className={`w-min flex flex-col justify-center transition ease-in-out duration-75 text-foreground-accent hover:text-accent1 cursor-pointer`}
       onClick={() => router.push(`/manga/${id}`)}
     >
       <div
         className={`w-256px h-363px rounded-card m-2 m-b-1 overflow-hidden transition ease-in-out duration-150 shadow-lg hover:shadow-md ${darkModeStyle}`}
       >
-        <div className="flex flex-row justify-center align-center w-full h-min rounded-l overflow-hidden pt-8">
+        <div className="flex flex-row justify-center align-center w-full h-min rounded-l overflow-hidden pt-8 filter grayscale-25 hover:grayscale-0">
           <Thumbnail imageUrl={image} />
         </div>
         <div className="flex flex-row justify-center mt-3 w-full font-mulish font-thin text-base tracking-wide">
