@@ -14,7 +14,7 @@ const Card = ({ image, title, id }) => {
       : "bg-foreground";
   return (
     <div
-      className={`w-min flex flex-col justify-center transition ease-in-out duration-75 text-foreground-accent hover:text-accent1 cursor-pointer`}
+      className={`w-min flex flex-col justify-center transition ease-in-out duration-75 text-foreground-accent filter grayscale-25 hover:grayscale-0 hover:text-accent1 cursor-pointer`}
       onClick={() => router.push(`/manga/${id}`)}
     >
       <div
