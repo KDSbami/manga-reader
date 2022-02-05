@@ -22,7 +22,7 @@ const Thumbnail = ({ imageUrl }) => {
           crossOrigin="anonymous"
           width="194"
           height="270"
-          className="filter grayscale-1 transition ease-in-out duration-300 grayscale-25 hover:grayscale-0"
+          className="filter grayscale-25 hover:grayscale-0"
           alt=""
         />
       </div>
