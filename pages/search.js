@@ -1,5 +1,5 @@
 import Container from "../src/components/Container";
-import InputField from "../src/components/InputField";
+import SearchField from "../src/components/SearchField";
 import CardContainer from "../src/components/CardContainer";
 import { fetchDataWithAuth } from "../src/services/apiServices";
 import Head from "next/head";
@@ -68,7 +68,7 @@ const Search = () => {
       <Head>
         <title>{title}</title>
       </Head>
-      <InputField
+      <SearchField
         placeholder={"Search for a manga"}
         inputCallback={onQueryChange}
         handleKeyDown={onKeyDown}

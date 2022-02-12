@@ -4,31 +4,25 @@
 import { React, useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Theme";
 // breakout @ 820px
-const InputField = ({ placeholder, value, inputCallback, handleKeyDown, icon, type, style }) => {
+const SearchField = ({ placeholder, value, inputCallback, handleKeyDown, icon, type, style }) => {
   let { theme, setTheme } = useContext(ThemeContext);
   let [ hover, setHover ] = useState(false);
   let [ focus, setFocus ] = useState(false);
   let [ themeStyle, setThemeStyle ] = useState(false);
 
-
-  
   useEffect(()=>{
-    let lightStyleReactivity = hover || focus ? "bg-background border-accent1" :"bg-background border-foreground-25"
-    let darkStyleReactivity = hover || focus ? "bg-background-25 border-accent1" :"bg-background-25"
-    
-    // let darkModeStyle = theme === "dark" 
-    //   ? `transition ease-in-out duration-150 ${themeStyleReactivity}` : "bg-foreground";
+    let themeStyleReactivity = hover || focus ? "bg-foreground-shading" : "bg-background"
     
     let darkModeStyle = theme === "dark" 
-      ? `transition ease-in-out duration-150 ${darkStyleReactivity}`
-      : `transition ease-in-out duration-150 ${lightStyleReactivity}`
-
+      ? `transition ease-in-out duration-150 ${themeStyleReactivity}` : "bg-foreground";
+    
       setThemeStyle(darkModeStyle)
   },[theme, hover, focus])
   
+  let shadow = `border ${hover || focus?"border-foreground":"border-foreground-25"} ${hover?"transition ease-in-out duration-150 shadow-xl hover:shadow-md":`${focus?"shadow-md":"shadow-xl"}`}`;
   return (
     <div
-      className={`flex flex-row border border-background align-center h-44px rounded w-full overflow-hidden ${themeStyle}`}
+      className={`flex flex-row align-center h-44px border-foreground rounded-full w-full overflow-hidden ${themeStyle} ${shadow}`}
       onMouseOver={()=>{setHover(true)}}
       onMouseOut={()=>{setHover(false)}}
     >
@@ -47,14 +41,14 @@ const InputField = ({ placeholder, value, inputCallback, handleKeyDown, icon, ty
           placeholder={placeholder}
           type={type?type:"text"}
           value={value}
-          className={`${icon?"pl-2":"pl-4"} placeholder-foreground-25 bg-background outline-none text-foreground-accent text-base w-full ${themeStyle}`}
+          className={`${icon?"pl-2":"pl-4"} placeholder-foreground-25 outline-none text-foreground-accent text-xl w-full ${themeStyle}`}
           onChange={inputCallback}
           onKeyDown={handleKeyDown}
-          onBlur={()=>{setFocus(false)}}
+          onBlur={()=>{console.log("out focused");setFocus(false)}}
           onFocus={()=>{setFocus(true)}}
         />
     </div>
   );
 };
 
-export default InputField;
+export default SearchField;

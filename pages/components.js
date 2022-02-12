@@ -5,7 +5,7 @@ import DevComponent from "../src/components/DevComponent";
 import coverData from "../src/constants/cardContainerData";
 import CardContainer from "../src/components/CardContainer";
 import RoundedDiv from "../src/components/RoundedDiv";
-import Search from "../src/components/InputField";
+import Search from "../src/components/SearchField";
 
 const Components = () => {
   return (
