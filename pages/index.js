@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Container from "../src/components/Container";
 import SearchField from "../src/components/SearchField";
 import { ThemeContext } from "../src/components/Theme";
+import { AuthContext } from "../src/components/Token";
 import { fetchData, fetchDataWithAuth } from "../src/services/apiServices";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const [searchIcon, setSearchIcon] = useState("");
   let { theme, setTheme } = useContext(ThemeContext);
+  let { tokens, setTokens } = useContext(AuthContext);
 
   useEffect(()=>{
     setSearchIcon(

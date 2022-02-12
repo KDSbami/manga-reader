@@ -12,7 +12,7 @@ const getUrl = (apiId) => {
 
 export function getApiRoute(apiId, endpointId) {
   if (apiId && endpointId)
-    return `${getUrl(apiId)}${getEndpoint(apiId, endpointId)}`;
+    return `${getUrl(apiId)}${getEndpoint(apiId, endpointId) ?? endpointId}`;
   console.error("Could not find matching API route");
   return ``;
 }

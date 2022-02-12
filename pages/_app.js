@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import Theme from "../src/components/Theme";
+import Token from "../src/components/Token";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <Theme>
-      <Component {...pageProps} />
+      <Token>
+        <Component {...pageProps} />
+      </Token>
     </Theme>
   );
 };

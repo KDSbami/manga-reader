@@ -7,7 +7,17 @@ const credentialsHandler = (
   apiSecurityHeaderKey = "Authorization",
   apiSecurityHeaderValue = `Bearer *`
 ) => {
-  const token = localStorage.getItem(`${apiNetwork}.auth`);
+  const stringifiedTokenObject = localStorage.getItem(`auth`);
+  let tokenObject = {};
+  try {
+    tokenObject = JSON.parse(stringifiedTokenObject);
+    tokenObject = tokenObject ?? {};
+  } catch(e) {
+    console.error("in catch: ",e);
+    tokenObject = {};
+  }
+  console.log(tokenObject);
+  const token = tokenObject[apiNetwork] ;
   if (token) {
     let tokenisedString = apiSecurityHeaderValue.replace("*", token);
     config.headers[apiSecurityHeaderKey] = tokenisedString;

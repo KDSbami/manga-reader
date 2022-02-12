@@ -4,7 +4,7 @@ import Button from "../src/components/ButtonV2";
 import AuthContainer from "../src/components/AuthContainer";
 import { useState, useEffect } from "react";
 
-const MyApp = ({ Component, pageProps }) => {
+const Login = ({ Component, pageProps }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -46,4 +46,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default Login;

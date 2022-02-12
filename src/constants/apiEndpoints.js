@@ -6,6 +6,7 @@ const supportedApis = {
     headerValue: "Bearer *",
     endpoints: {
       GET_MANGA_LIST: `/manga`,
+      USER_LOGIN: `/auth/login`,
     },
   },
 };
