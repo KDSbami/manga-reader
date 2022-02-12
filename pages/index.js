@@ -1,7 +1,7 @@
 import { React, useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Container from "../src/components/Container";
-import InputField from "../src/components/InputField";
+import SearchField from "../src/components/SearchField";
 import { ThemeContext } from "../src/components/Theme";
 import { fetchData, fetchDataWithAuth } from "../src/services/apiServices";
 
@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <div className="row-start-3 pt-2">
           <div className="max-w-640px m-auto p-4">
-            <InputField
+            <SearchField
               placeholder={""}
               inputCallback={onQueryChange}
               handleKeyDown={onKeyDown}

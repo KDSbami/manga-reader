@@ -13,7 +13,8 @@ module.exports = {
        'cardHolder': 'repeat(auto-fill,minmax(256px, 1fr))',
       },
       maxWidth: {
-        "640px":"640px"
+        "640px":"640px",
+        "448px":"448px"
       },
       height: {
         min:"min-content"
@@ -56,6 +57,7 @@ module.exports = {
         "5px": "5px",
         "30px": "30px",
         "44px": "44px",
+        "52px": "52px",
         "300px": "300px",
         "128px":"128px",
         "180px":"180px",
@@ -65,6 +67,9 @@ module.exports = {
         "360px":"360px",
         "363px":"363px",
         "450px":"450px",
+        "500px":"500px",
+        "550px":"550px",
+        "600px":"600px",
         "1440px": "1440px",
       },
       grayscale: {

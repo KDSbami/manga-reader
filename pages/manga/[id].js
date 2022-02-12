@@ -1,7 +1,7 @@
 import Container from "../../src/components/Container";
 import Button from "../../src/components/Button";
 import Showcase from "../../src/components/Showcase";
-import InputField from "../../src/components/InputField";
+import SearchField from "../../src/components/SearchField";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useEffect } from "react";
@@ -62,7 +62,7 @@ const Manga = () => {
       <Container>
         <div className="grid grid-cols-2 grid-template-rows: repeat(1, minmax(0, 1fr)) gap-y-2">
           <div className="row-start-1 col-span-full">
-            <InputField
+            <SearchField
               inputCallback={onQueryChange}
               handleKeyDown={onKeyDown}
               value={query}
