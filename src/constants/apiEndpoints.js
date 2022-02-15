@@ -1,3 +1,4 @@
+import callbacks from '../constants/endpointCallbacks';
 const supportedApis = {
   "api.mangadex.org": {
     name: "api.mangadex.org",
@@ -8,6 +9,9 @@ const supportedApis = {
       GET_MANGA_LIST: `/manga`,
       USER_LOGIN: `/auth/login`,
     },
+    callbacks: {
+      storeTokenCallback:callbacks.putMangadexToken
+    }
   },
 };
 export default supportedApis;

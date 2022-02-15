@@ -4,12 +4,12 @@
 import { React, useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Theme";
 // breakout @ 820px
-const InputField = ({ placeholder, value, inputCallback, handleKeyDown, icon, type, style }) => {
+const InputField = ({ placeholder, value, inputCallback, handleKeyDown, icon, type, customProps }) => {
   let { theme, setTheme } = useContext(ThemeContext);
   let [ hover, setHover ] = useState(false);
   let [ focus, setFocus ] = useState(false);
   let [ themeStyle, setThemeStyle ] = useState(false);
-
+  const additionalProps = customProps ?? {};
 
   
   useEffect(()=>{
@@ -45,13 +45,14 @@ const InputField = ({ placeholder, value, inputCallback, handleKeyDown, icon, ty
       }
         <input
           placeholder={placeholder}
-          type={type?type:"text"}
+          type={type??"text"}
           value={value}
           className={`${icon?"pl-2":"pl-4"} placeholder-foreground-25 bg-background outline-none text-foreground-accent text-base w-full ${themeStyle}`}
           onChange={inputCallback}
           onKeyDown={handleKeyDown}
           onBlur={()=>{setFocus(false)}}
           onFocus={()=>{setFocus(true)}}
+          {...additionalProps}
         />
     </div>
   );

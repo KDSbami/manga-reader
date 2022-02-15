@@ -1,4 +1,5 @@
 import { React, createContext, useState, useEffect } from "react";
+import supportedApis from '../../constants/apiEndpoints';
 
 export const AuthContext = createContext();
 
@@ -10,12 +11,14 @@ const getAuthToken = () => {
       try {
         tokenObject = JSON.parse(storedTokens);
         tokenObject = tokenObject ?? {};
-        console.log("whats happening here", tokenObject)
       } catch(e) {
         console.error("in catch: ",e);
         tokenObject = {};
       }
-    } 
+    }
+    if(!storedTokens) {
+      localStorage.setItem("auth",JSON.stringify(tokenObject));
+    }
     return tokenObject;
   }
 
@@ -24,7 +27,17 @@ const getAuthToken = () => {
 
 const Token = ({ children }) => {
   const [tokens, _setTokens] = useState(getAuthToken);
-  const setTokens = (tokenObject)=> {
+  const setTokens = (apiId, apiToken)=> {
+
+    let tokenObject = {};
+    if(typeof tokens === "object") {
+      tokenObject = tokens;
+    }
+    const storeTokenCallback = supportedApis[apiId]["callbacks"]["storeTokenCallback"];
+    if(storeTokenCallback) {
+      tokenObject = storeTokenCallback(tokenObject, apiToken);
+    }
+
     if (typeof window !== "undefined" && window.localStorage) {
       localStorage.setItem("auth",JSON.stringify(tokenObject))
     }

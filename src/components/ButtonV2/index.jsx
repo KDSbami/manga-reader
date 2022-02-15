@@ -1,7 +1,7 @@
 import { React, useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Theme";
 
-const ButtonV2 = ({ onClick, title, animate }) => {
+const ButtonV2 = ({ onClick, title, animate, type }) => {
   const { theme } = useContext(ThemeContext);
   const [ themeStyle, setThemeStyle] = useState("");
   let animation;
@@ -71,7 +71,8 @@ const ButtonV2 = ({ onClick, title, animate }) => {
     </style>
     <button
       className={`w-full h-full relative overflow-hidden flex flex-col justify-center align-center rounded ${animation}`}
-      onClick={(e)=>{createRipple(e);onClick(e)}}
+      onClick={(e)=>{createRipple(e); if(onClick)onClick(e)}}
+      type={type}
     >
       <div className={`font-mulish h-min font-extrabold text-xl m-auto`}>
         {title}

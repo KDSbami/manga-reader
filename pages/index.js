@@ -11,7 +11,6 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const [searchIcon, setSearchIcon] = useState("");
   let { theme, setTheme } = useContext(ThemeContext);
-  let { tokens, setTokens } = useContext(AuthContext);
 
   useEffect(()=>{
     setSearchIcon(
@@ -28,7 +27,6 @@ const Home = () => {
     if (e.key !== "Enter") return;
     router.push(`/search?q=${query}`);
   }
-
   return (
     <Container>
       <div className="grid grid-rows-5 h-full">
