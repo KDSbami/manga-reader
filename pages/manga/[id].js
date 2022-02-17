@@ -5,6 +5,7 @@ import InputField from "../../src/components/InputField";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import ChapterList from "../../src/components/ChapterList";
 
 const Manga = () => {
   const router = useRouter();
@@ -53,13 +54,35 @@ const Manga = () => {
     }
   };
 
+  const chapters = [
+    {
+      id: 0,
+      name: "Chapter 1"
+    },
+    {
+      id: 1,
+      name: "Chapter 2"
+    },
+    {
+      id: 2,
+      name: "Chapter 3"
+    }
+  ]
+
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
       <Container>
-        <div className="grid grid-template-cols: repeat(2, minmax(0, auto)) grid-template-rows: repeat(1, minmax(0, 1fr)) gap-y-2 gap-x-4">
+        <div className="grid grid-flow-row">
+          <div><InputField inputCallback={onQueryChange} handleKeyDown={onKeyDown} value={query}/></div>
+          <div className="p-5">
+            {cover ? <Showcase coverUrl={cover} mangaTitle={title} /> : null}
+            <ChapterList chapters={chapters}/>  
+          </div>
+        </div>
+        {/* <div className="grid grid-template-cols: repeat(2, minmax(0, auto)) grid-template-rows: repeat(1, minmax(0, 1fr)) gap-y-2 gap-x-4">
           <div className="row-start-1 col-span-2">
             <InputField
               inputCallback={onQueryChange}
@@ -88,7 +111,7 @@ const Manga = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
     </>
   );
