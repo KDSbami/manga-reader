@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getAuthData } from "./endpointService";
+import supportedApis from "../constants/apiEndpoints";
 
 const credentialsHandler = (
   config = { headers: {} },
@@ -12,16 +13,15 @@ const credentialsHandler = (
   try {
     tokenObject = JSON.parse(stringifiedTokenObject);
     tokenObject = tokenObject ?? {};
+    const token = supportedApis["api.mangadex.org"]["callbacks"]["getTokenCallback"](tokenObject);
+    if (token) {
+      let tokenisedString = apiSecurityHeaderValue.replace("*", token);
+      config.headers[apiSecurityHeaderKey] = tokenisedString;
+      return axios.create(config);
+    }
   } catch(e) {
     console.error("in catch: ",e);
     tokenObject = {};
-  }
-  console.log(tokenObject);
-  const token = tokenObject[apiNetwork] ;
-  if (token) {
-    let tokenisedString = apiSecurityHeaderValue.replace("*", token);
-    config.headers[apiSecurityHeaderKey] = tokenisedString;
-    return axios.create(config);
   }
   console.error("Could not find matching API token.");
   return axios.create({});

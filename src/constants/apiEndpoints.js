@@ -10,7 +10,8 @@ const supportedApis = {
       USER_LOGIN: `/auth/login`,
     },
     callbacks: {
-      storeTokenCallback:callbacks.putMangadexToken
+      storeTokenCallback:callbacks.putMangadexToken,
+      getTokenCallback:callbacks.getMangadexToken
     }
   },
 };

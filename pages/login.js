@@ -53,6 +53,9 @@ const Login = () => {
                     placeholder={""}
                     inputCallback={(e)=>{setUsername(e.target.value)}}
                     value={username}
+                    customProps={{
+                      autoComplete:"username"
+                    }}
                   />
                 </div>
                 <div className="mt-8">
